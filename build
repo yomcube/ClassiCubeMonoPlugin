@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+gcc -o MonoPlugin.so MonoPlugin.c \
+	-shared -fPIC \
+	-rdynamic `pkg-config --cflags --libs mono-2`
+
+mcs -target:library -out:MonoPluginLoader.dll MonoPluginLoader*.cs
