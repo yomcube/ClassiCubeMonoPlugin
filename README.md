@@ -15,7 +15,7 @@ ClassiCubeMonoPlugin is by no means complete. Please open an issue to report bug
 Plugins must be compiled in reference to `MonoPluginLoader.dll`.
 
 ```
-mcs -target:library -r:path/to/MonoPlugin.dll path/to/file.cs
+mcs -target:library -r:path/to/MonoPluginLoader.dll path/to/file.cs
 ```
 ### Limitations
 
