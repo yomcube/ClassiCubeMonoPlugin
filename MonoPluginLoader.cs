@@ -87,14 +87,19 @@ namespace ClassiCube {
 		public static void FileCallback (string filename)
 		{
 			try {
+				// TODO: remove debug stuff
 				if (filename == null) { Chat.Add("filename == null"); return; }
 				// Workaround to prevent exceptions from using filename.EndsWith(".dll")
+				// TODO: remove debug stuff
+				Chat.Add(filename);
 				bool isDll =
 					filename.Length > 3 &&
-					filename[filename.Length - 3] == '.' &&
-					filename[filename.Length - 2] == 'd' &&
-					filename[filename.Length - 1] == 'l' &&
-					filename[filename.Length]     == 'l';
+					filename[filename.Length - 4] == '.' &&
+					filename[filename.Length - 3] == 'd' &&
+					filename[filename.Length - 2] == 'l' &&
+					filename[filename.Length - 1] == 'l';
+				// TODO: remove debug stuff
+				Chat.Add(isDll);
 				if (!isDll)
 					return;
 				Chat.Add(filename);
