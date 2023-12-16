@@ -92,6 +92,7 @@ namespace ClassiCube {
 				// Workaround to prevent exceptions from using filename.EndsWith(".dll")
 				// TODO: remove debug stuff
 				Chat.Add(filename);
+				Chat.Add(cwd);
 				bool isDll =
 					filename.Length > 3 &&
 					filename[filename.Length - 4] == '.' &&
