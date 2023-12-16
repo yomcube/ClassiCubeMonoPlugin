@@ -2,7 +2,7 @@ name: build
 run-name: build
 on: [push]
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,26 +14,13 @@ jobs:
         run: sed -i -e 's/\.\.\/ClassiCube\-src/ClassiCube/g' ./Api.h
       - name: Replace instances of '../ClassiCube-src' with 'ClassiCube' in MonoPlugin.c
         run: sed -i -e 's/\.\.\/ClassiCube\-src/ClassiCube/g' ./MonoPlugin.c
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Complile for Linux 64-bit
         id: compile
         run: ./build
-  package:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Package into a tar
         run: tar -cf archive.tar MonoPlugin.so MonoPluginLoader.dll
       - name: Compress the tar with gzip
         run: gzip archive.tar
-        
-  upload:
-    needs: package
-    runs-on: ubuntu-latest
-    steps:
       - uses: ./ClassiCube/.github/actions/upload_build
         with:
           SOURCE_FILE: 'archive.tar.gz'
