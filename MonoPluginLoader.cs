@@ -37,6 +37,7 @@ namespace ClassiCube {
 	public static class Utils
 	{
 		public const int STRLEN = 80;
+		// https://stackoverflow.com/a/3008775
 		public static IEnumerable<string> SplitByLength(this string str)
 		{
 			if (str.Length <= STRLEN) {
