@@ -102,8 +102,7 @@ namespace ClassiCube {
 				Chat.Add(isDll);
 				if (!isDll)
 					return;
-				Chat.Add(filename);
-				Assembly a = Assembly.LoadFile(System.IO.Directory.GetCurrentDirectory() + "/" + filename);
+				Assembly a = Assembly.LoadFile(filename);
 				try {
 					plugins = LoadTypes<Plugin>(a);
 				} catch (Exception e) {
