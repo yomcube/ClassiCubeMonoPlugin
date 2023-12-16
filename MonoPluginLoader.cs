@@ -88,7 +88,14 @@ namespace ClassiCube {
 		{
 			try {
 				if (filename == null) { Chat.Add("filename == null"); return; }
-				if (!filename.EndsWith(".dll"))
+				// Workaround to prevent exceptions from using filename.EndsWith(".dll")
+				bool isDll =
+					filename.Length > 3 &&
+					filename[filename.Length - 3] == '.' &&
+					filename[filename.Length - 2] == 'd' &&
+					filename[filename.Length - 1] == 'l' &&
+					filename[filename.Length]     == 'l';
+				if (!isDll)
 					return;
 				Chat.Add(filename);
 				Assembly a = Assembly.LoadFile(System.IO.Directory.GetCurrentDirectory() + "/" + filename);
