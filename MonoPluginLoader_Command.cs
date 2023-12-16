@@ -62,8 +62,7 @@ namespace ClassiCube
 		public class HelpCommand : Command {
 			public override string Name { get { return "help"; } }
 			public override string Help { get {
-				return  "&7...really? Wow. Just... wow.\n" +
-						"&a/client monocmd help [command]\n" +
+				return  "&a/client monocmd help [command]\n" +
 						"&eDisplays help for the given command.";
 			} }
 			public override void Execute (string args)
