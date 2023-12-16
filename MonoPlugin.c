@@ -20,7 +20,6 @@ gcc -o MonoPlugin.so MonoPlugin.c \
 #include <mono/utils/mono-publib.h>
 #include <mono/metadata/mono-config.h>
 #include <stdlib.h>
-#include <unistd.h> // getcwd
 
 #include "../ClassiCube-src/src/BlockPhysics.h"
 #include "../ClassiCube-src/src/Chat.h"
@@ -59,19 +58,12 @@ static void MonoInit(void) {
 static void LoadPlugin(const cc_string* filename, void* obj) {
 	if (!assembly)
 		return;
-	void *args[2];
+	void *args[1];
 	
 	int len = filename->length + 1;
 	char* str[len];
 	String_CopyToRaw(&str, len, filename);
 	args[0] = mono_string_new_wrapper(str);
-
-	char cwd[512]; // hopefully the path won't be more than 512 chars
-	if (getcwd(cwd, sizeof(cwd) != NULL)) {
-		args[1] = cwd;
-	} else {
-		args[1] = mono_string_new_wrapper("\n");
-	}
 	
 	mono_runtime_invoke (Method_FileCallback, NULL, args, NULL);
 }
