@@ -61,7 +61,7 @@ static void LoadPlugin(const cc_string* filename, void* obj) {
 		return;
 	void *args[2];
 	
-	int len = filename->length + 1
+	int len = filename->length + 1;
 	char* str[len];
 	String_CopyToRaw(&str, len, filename);
 	args[0] = mono_string_new_wrapper(str);
