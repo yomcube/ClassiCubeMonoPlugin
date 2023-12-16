@@ -21,9 +21,7 @@ gcc -o MonoPlugin.so MonoPlugin.c \
 #include <mono/metadata/mono-config.h>
 #include <stdlib.h>
 
-#include "../ClassiCube-src/src/BlockPhysics.h"
 #include "../ClassiCube-src/src/Chat.h"
-#include "../ClassiCube-src/src/Event.h"
 #include "../ClassiCube-src/src/Game.h"
 #include "../ClassiCube-src/src/Platform.h"
 #include "../ClassiCube-src/src/String.h"
