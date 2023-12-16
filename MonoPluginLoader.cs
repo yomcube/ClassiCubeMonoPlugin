@@ -84,7 +84,7 @@ namespace ClassiCube {
 			}
 			return instances;
 		}
-		public static void FileCallback (string filename)
+		public static void FileCallback (string filename, string cwd)
 		{
 			try {
 				// TODO: remove debug stuff
@@ -102,7 +102,7 @@ namespace ClassiCube {
 				Chat.Add(isDll);
 				if (!isDll)
 					return;
-				Assembly a = Assembly.LoadFile(filename);
+				Assembly a = Assembly.LoadFile(cwd + filename);
 				try {
 					plugins = LoadTypes<Plugin>(a);
 				} catch (Exception e) {
