@@ -10,9 +10,9 @@ jobs:
       - name: Clone UnkownShadow200/ClassiCube
         run: git clone https://github.com/UnknownShadow200/ClassiCube
       - name: Replace instances of '../ClassiCube-src' with 'ClassiCube' in Api.h
-        run: sed -i -e 's/\.\.\/ClassiCube\-src/ClassiCube/g' Api.h
+        run: sed -i -e 's/\.\.\/ClassiCube\-src/ClassiCube/g' ./Api.h
       - name: Replace instances of '../ClassiCube-src' with 'ClassiCube' in MonoPlugin.c
-        run: sed -i -e 's/\.\.\/ClassiCube\-src/ClassiCube/g' MonoPlugin.c
+        run: sed -i -e 's/\.\.\/ClassiCube\-src/ClassiCube/g' ./MonoPlugin.c
   build:
     needs: setup
     runs-on: ubuntu-latest
