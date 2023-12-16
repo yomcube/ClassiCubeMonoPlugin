@@ -25,4 +25,4 @@ jobs:
       - uses: ./ClassiCube/.github/actions/upload_build
         with:
           SOURCE_FILE: 'archive.tar.gz'
-          DEST_NAME: 'ClassiCube-Linux64'
+          DEST_NAME: 'MonoPlugin-Linux64.tar.gz'
