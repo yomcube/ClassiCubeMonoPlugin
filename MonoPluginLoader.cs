@@ -84,15 +84,15 @@ namespace ClassiCube {
 			}
 			return instances;
 		}
-		public static void FileCallback (string filename, string cwd)
+		public static void FileCallback (string filename)
 		{
 			try {
-				// TODO: remove debug stuff
 				if (filename == null) { Chat.Add("filename == null"); return; }
-				// Workaround to prevent exceptions from using filename.EndsWith(".dll")
+				string dir = System.IO.Directory.GetCurrentDirectory();
 				// TODO: remove debug stuff
 				Chat.Add(filename);
-				Chat.Add(cwd);
+				Chat.Add(dir);
+				// Workaround to prevent exceptions from using filename.EndsWith(".dll")
 				bool isDll =
 					filename.Length > 3 &&
 					filename[filename.Length - 4] == '.' &&
@@ -103,7 +103,7 @@ namespace ClassiCube {
 				Chat.Add(isDll);
 				if (!isDll)
 					return;
-				Assembly a = Assembly.LoadFile(cwd + filename);
+				Assembly a = Assembly.LoadFile(dir + "/" + filename);
 				try {
 					plugins = LoadTypes<Plugin>(a);
 				} catch (Exception e) {
