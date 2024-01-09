@@ -50,7 +50,7 @@ The API is similar to the API found [here](https://github.com/ClassiCube/ClassiC
 	- `Events.Reset`
 	- `Events.NewMap`
 	- `Events.MapLoaded`
-- `Server.SendDatas`
+- `Server.SendData`
 - `Window.GetHandle`
 
 ## Example plugins
