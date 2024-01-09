@@ -73,21 +73,21 @@ static int MPAPI_Camera_GetIsThird(void) {
 	return Camera.Active->isThirdPerson;
 }
 static int MPAPI_Camera_GetX(void) {
-	return Camera.CurrentPos.X;
+	return Camera.CurrentPos.x;
 }
 static int MPAPI_Camera_GetY(void) {
-	return Camera.CurrentPos.Y;
+	return Camera.CurrentPos.y;
 }
 static int MPAPI_Camera_GetZ(void) {
-	return Camera.CurrentPos.Z;
+	return Camera.CurrentPos.z;
 }
 static int MPAPI_Camera_GetYaw(void) {
 	Vec2 orientation = Camera.Active->GetOrientation();
-	return MATH_RAD2DEG * orientation.X;
+	return MATH_RAD2DEG * orientation.x;
 }
 static int MPAPI_Camera_GetPitch(void) {
 	Vec2 orientation = Camera.Active->GetOrientation();
-	return MATH_RAD2DEG * orientation.Y;
+	return MATH_RAD2DEG * orientation.y;
 }
 static int MPAPI_Camera_GetIsSmooth(void) {
 	return Camera.Smooth;
@@ -208,15 +208,15 @@ static int MPAPI_Player_GetReach(void) {
 }
 static int MPAPI_Player_GetX(void) {
 	struct LocalPlayer* p = GetPlayer();
-	return p->Base.Position.X;
+	return p->Base.Position.x;
 }
 static int MPAPI_Player_GetY(void) {
 	struct LocalPlayer* p = GetPlayer();
-	return p->Base.Position.Y;
+	return p->Base.Position.y;
 }
 static int MPAPI_Player_GetZ(void) {
 	struct LocalPlayer* p = GetPlayer();
-	return p->Base.Position.Z;
+	return p->Base.Position.z;
 }
 static int MPAPI_Player_GetYaw(void) {
 	struct LocalPlayer* p = GetPlayer();
