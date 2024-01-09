@@ -3,11 +3,11 @@
 ClassiCubeMonoPlugin is a plugin for [ClassiCube](https://www.classicube.net/) that allows for scripting functionality with [mono](https://www.mono-project.com/).
 
 ## Table of contents
-[How to use](#how-to-use)
-[Feedback](#feedback)
-[Developer info](#developer-info)
-[API](#api)
-[Example plugins](example-plugins)
+[How to use](#how-to-use)  
+[Feedback](#feedback)  
+[Developer info](#developer-info)  
+[API](#api)  
+[Example plugins](example-plugins)  
 [Compiling](#compiling)
 
 ## How to use
