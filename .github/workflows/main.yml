@@ -8,8 +8,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install mono-devel
         run: sudo apt-get install -y mono-devel
-      - name: Clone UnkownShadow200/ClassiCube
-        run: git clone https://github.com/UnknownShadow200/ClassiCube
+      - name: Clone ClassiCube/ClassiCube
+        run: git clone https://github.com/ClassiCube/ClassiCube
       - name: Replace instances of '../ClassiCube-src' with 'ClassiCube' in Api.h
         run: sed -i -e 's/\.\.\/ClassiCube\-src/ClassiCube/g' ./Api.h
       - name: Replace instances of '../ClassiCube-src' with 'ClassiCube' in MonoPlugin.c
